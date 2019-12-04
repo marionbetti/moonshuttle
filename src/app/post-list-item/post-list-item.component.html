@@ -1,0 +1,16 @@
+<div>
+  <h2>{{ message.titre }}</h2>
+  <p>{{ message.contenu }}</p>
+</div>
+
+<button class="btn btn-danger" (click)="onClickHome()">
+  retour a l'acceuil
+</button>
+
+<button class="btn btn-alert" (click)="onClickDelete(message)">
+  supprimer
+</button>
+
+<button class="btn btn-warning" (click)="onClickUpdate(message)">
+  mise à jour
+</button>

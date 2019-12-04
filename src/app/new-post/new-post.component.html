@@ -1,0 +1,43 @@
+<form #f="ngForm" (submit)="onSubmitNew($event, f)">
+  <div class="form-group">
+    <label for="titre">titre</label>
+    <input
+      class="form-control "
+      type="text"
+      name="titre"
+      ngModel
+      #titre="ngModel"
+      required
+      minlength="3"
+      maxlength="50"
+    />
+    <div class="alert alert-danger" *ngIf="titre.touched && !titre.valid"></div>
+  </div>
+
+  <div class="form-group">
+    <label for="contenu">
+      Contenu
+    </label>
+    <textarea
+      name="contenu"
+      class="form-control"
+      ngModel
+      #contenu="ngModel"
+      required
+      minlength="5"
+    ></textarea>
+    <div class="alert alert-danger" *ngIf="titre.touched && !titre.valid"></div>
+  </div>
+</form>
+
+<div class="form-group mx-auto primary">
+  <input
+    type="submit"
+    value="Créer"
+    class="btn btn-light"
+    [disabled]="!f.valid"
+  />
+</div>
+<div class="alert alert-success" *ngIf="isOk">
+  Nouveau message créé !!!
+</div>
